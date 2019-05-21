@@ -2,12 +2,9 @@
   "name": "test-practice",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
-    "lint": "eslint **/*.js",
-    "test": "jest --verbose --coverage",
-    "test-watch": "jest --watchAll --verbose --coverage",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
