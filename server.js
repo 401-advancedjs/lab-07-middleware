@@ -11,20 +11,39 @@ const notFound = (req, res) => {
   res.status(404).send('testing');
 };
 
+const reqTime = (req, res, next) => {
+  console.log('hello from reqTime');
+  req.requestTime = new Date();
+  next();
+};
 
-app.get('/a', (req,res) => {
+const logger = (req, res, next) => {
+  console.log('Method: ', req.method, 'Path: ', req.path, 'Time: ', req.requestTime);
+  next();
+};
+
+const squareIt = (req, res, next) => {
+  let num = req.params.num;
+  num = num * num;
+  req.number = num;
+  next();
+};
+
+
+app.get('/a', reqTime, logger, (req, res, next) => {
   res.status(200).send('Route A');
 });
 
-app.get('/b', (req,res) => {
-  res.status(200).send('Route B');
+app.get('/b/:num', reqTime, logger, squareIt, (req, res, next) => {
+  console.log(req.number);
+  res.send({number: req.number});
 });
 
-app.get('/c', (req,res) => {
+app.get('/c', reqTime, logger, (req, res, next) => {
   res.status(200).send('Route C');
 });
 
-app.get('/d', (req,res) => {
+app.get('/d', reqTime, logger, (req, res, next) => {
   res.status(200).send('Route D');
 });
 
