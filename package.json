@@ -1,18 +1,24 @@
 {
   "name": "test-practice",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "![CF](http://i.imgur.com/7v5ASc8.png) LAB =================================================",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
-    "lint": "eslint **/*.js",
-    "test": "jest --verbose --coverage",
-    "test-watch": "jest --watchAll --verbose --coverage",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/401-advancedjs/express.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/401-advancedjs/express/issues"
+  },
+  "homepage": "https://github.com/401-advancedjs/express#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.17.0"
   }
 }
