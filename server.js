@@ -25,7 +25,6 @@ app.get('/b/:num', squareIt, (req, res, next) => {
 });
 
 app.use(router);
-app.use(notFound);
 app.use('*', notFound);
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
